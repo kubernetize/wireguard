@@ -1,8 +1,8 @@
 FROM registry.k8s.io/pause:3.9 AS pause
 
-FROM alpine:3.18
+FROM alpine:3.21.3
 
-RUN apk --no-cache add wireguard-tools
+RUN apk --no-cache add wireguard-tools nftables
 
 COPY --from=pause /pause /
 
